@@ -6,7 +6,13 @@
     {% if latest_articles_list %}
 
         {% for a in latest_articles_list %}
-            <a href="{% url 'articles:detail' a.id %}">{{a.article_title}}</a>
+          <div class="col-md-4">
+            <h2>{{a.article_title}}</h2>
+            <p>{{a.pub_date}}</p>
+            <p>{{a.article_text}}</p>
+            <p><a class="btn btn-secondary" href="{% url 'articles:detail' a.id %}" role="button">Читать »</a></p>
+          </div>
+            <hr>
         {% endfor %}
 
     {%else%}
