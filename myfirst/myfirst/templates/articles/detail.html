@@ -3,11 +3,11 @@
 {% block title %}{{article.article_title}}{% endblock %}
 
 {% block content %}
-<h2>{{article.article_title}}</h2>
+<h2 style="margin-left:40px">{{article.article_title}}</h2>
 
-<p>{{article.article_text}}</p>
+<p style="margin-left:40px">{{article.article_text}}</p>
 
-<em>{{article.pub_date}}</em>
+<em style="margin-left:40px">{{article.pub_date}}</em>
 
 
 
@@ -17,14 +17,14 @@
 
     {% for c in latest_comments_list %}
         <p>
-            <strong>{{c.author_name}}</strong>
-            <p>{{c.comment_text}}</p>
+            <strong style="margin-left:80px">{{c.author_name}}</strong>
+            <p style="margin-left:80px">{{c.comment_text}}</p>
         </p>
         <hr>
     {% endfor %}
 
 {% else  %}
-Комментарии не найдены. Станьте первым!
+<p style="margin-left:40px">Комментарии не найдены. Станьте первым!</p>
 {% endif %}
 
 
@@ -34,11 +34,11 @@
 
     {% csrf_token %}
 
-    <input type="text" required placeholder="Ваше имя" name="name"><br>
-    <textarea name="text" required placeholder="Текст комментария" cols="80" rows="3"></textarea><br>
+    <input style="margin-left:40px"  type="text" required placeholder="Ваше имя" name="name" size="60" maxlength="50"><br><br>
+    <textarea style="margin-left:40px"  name="text" required placeholder="Текст комментария" cols="62" rows="3" maxlength="200"></textarea><br>
 
-    <button type="submit">Оставить комментарий</button>
+    <button style="margin-left:40px" class="btn btn-secondary" type="submit">Оставить комментарий</button>
 
-</form>
+</form><br>
 
 {% endblock %}
